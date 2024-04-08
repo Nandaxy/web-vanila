@@ -1,126 +1,126 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #efefef;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #efefef;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
-  color: #07ac07;
+    color: #07ac07;
 }
 
 .container {
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 24px;
-  text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
 }
 
 .container p {
-  color: gray;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 14px;
+    color: gray;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 14px;
 }
 
 .content {
-  margin-top: 20px;
-  margin-top: 20px;
+    margin-top: 20px;
+    margin-top: 20px;
 }
 
 input {
-  padding: 6px 10px;
-  font-size: 16px;
-  width: 100%;
-  font-weight: 600;
-  text-align: center;
-  border: solid 1px gray;
-  outline: none;
-  border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+    border: solid 1px gray;
+    outline: none;
+    border-radius: 4px;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
 
 .container-hasil {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .hasil {
-  text-align: center;
-  font-size: 14px;
+    text-align: center;
+    font-size: 12px;
 }
 .salah {
-  color: crimson;
+    color: crimson;
 }
 
 .benar {
-  color: green;
+    color: green;
 }
 
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .container-button {
-  display: flex;
-  justify-content: end;
-  margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
 }
 
 .btn {
-  padding: 6px 20px;
-  background-color: tomato;
-  outline: none;
-  border: none;
-  font-size: 16px;
-  color: white;
-  border-radius: 5px;
-  transition: all 0.3s;
-  cursor: pointer;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    padding: 6px 20px;
+    background-color: tomato;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-  opacity: 90%;
-  background-color: orange;
+    opacity: 90%;
+    background-color: orange;
 }
 
 .disabled {
-  background-color: gray;
-  cursor: not-allowed;
+    background-color: gray;
+    cursor: not-allowed;
 }
 
 .disabled:hover {
-  background-color: gray;
+    background-color: gray;
 }
 
 .score-count {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  text-align: right;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    text-align: right;
 }

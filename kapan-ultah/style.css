@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("asset/CyberPunk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    backdrop-filter: blur(2px);
+    background-color: #0000007c;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: solid 1px #efefef8a;
+    text-align: center;
+    box-shadow: 0px 6px 12px 0px #ffffff46;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+p {
+    color: #ffffffda;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 10px 0;
+    background-color: #161616a6;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    font-weight: 600;
+}
+
+span {
+    font-size: 16px;
+    font-weight: 500;
+}
