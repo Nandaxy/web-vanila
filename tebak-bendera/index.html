@@ -1,147 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tebak Bendera</title>
+  </head>
 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            min-height: 95vh;
-            background-image: url("https://i.pinimg.com/736x/4b/ee/50/4bee50f55f9056e6acc35f7614832588.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-        }
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 95vh;
+      background-image: url("asset/4bee50f55f9056e6acc35f7614832588.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
 
-        h1 {
-            text-align: center;
-        }
+    h1 {
+      text-align: center;
+    }
 
-        .card {
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
 
-        .gambarnya {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    .gambarnya {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
 
-        .gambarnya img {
-            max-width: 100%;
-            max-height: 200px;
-            width: auto;
-            height: auto;
-            border-radius: 10px;
-        }
+    .gambarnya img {
+      max-width: 100%;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+    }
 
-        .input-jawaban {
-            margin-top: 10px;
-        }
+    .input-jawaban {
+      margin-top: 10px;
+    }
 
-        input[type="text"] {
-            padding: 10px;
-            border-radius: 5px;
-            width: 90%;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            outline: none;
-            color: #333;
-            font-size: 16px;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border 0.3s ease;
-        }
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      width: 93%;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      outline: none;
+      color: #333;
+      font-size: 16px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: border 0.3s ease;
+    }
 
-        input[type="text"]:focus {
-            border: 1px solid #0066cc;
-        }
+    input[type="text"]:focus {
+      border: 1px solid #0066cc;
+    }
 
-        #btn-jawab {
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #0066cc;
-            width: 100%;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    #btn-jawab {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #0066cc;
+      width: 100%;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-        #btn-jawab:hover {
-            background-color: #004999;
-        }
-    </style>
-    <body>
-        <div>
-            <h1>TEBAK BENDERA</h1>
+    #btn-jawab:hover {
+      background-color: #004999;
+    }
+  </style>
+  <body>
+    <div>
+      <h1>TEBAK BENDERA</h1>
 
-            <div class="card">
-                <div id="gambarnya" class="gambarnya"></div>
-                <div class="input-jawaban">
-                    <input
-                        type="text"
-                        placeholder="jawabanyaa....."
-                        id="jawab"
-                    />
-                    <button id="btn-jawab">Cek Jawaban</button>
-                </div>
-            </div>
+      <div class="card">
+        <div id="gambarnya" class="gambarnya"></div>
+        <div class="input-jawaban">
+          <input type="text" placeholder="jawabanyaa....." id="jawab" />
+          <button id="btn-jawab">Cek Jawaban</button>
         </div>
+      </div>
+    </div>
 
-        <script>
-            let correctAnswer = "";
+    <script>
+      let jawabanYangBenar = "";
 
-            const fetchData = async () => {
-                const res = await fetch(
-                    "https://next-js-roan-delta.vercel.app/api/game/tebak-bendera?pics"
-                );
-                const data = await res.json();
-                console.log(data);
+      const fetchData = async () => {
+        const res = await fetch(
+          "https://next-js-roan-delta.vercel.app/api/game/tebak-bendera?pics"
+        );
+        const data = await res.json();
 
-                correctAnswer = data.name; // Simpan jawaban yang benar
+        jawabanYangBenar = data.name;
 
-                // Hapus gambar sebelumnya
-                document.getElementById("gambarnya").innerHTML = "";
+        document.getElementById("gambarnya").innerHTML = "";
 
-                const imgElement = document.createElement("img");
-                imgElement.src = data.img;
-                imgElement.alt = "gambar";
+        const elemenGambar = document.createElement("img");
+        elemenGambar.src = data.img;
+        elemenGambar.alt = "gambar";
 
-                document.getElementById("gambarnya").appendChild(imgElement);
-            };
+        document.getElementById("gambarnya").appendChild(elemenGambar);
+      };
 
-            fetchData();
+      fetchData();
 
-            document
-                .getElementById("btn-jawab")
-                .addEventListener("click", () => {
-                    const userAnswer = document
-                        .getElementById("jawab")
-                        .value.trim()
-                        .toLowerCase();
-                    if (userAnswer === correctAnswer.toLowerCase()) {
-                        alert("Jawaban benar!");
-                        fetchData(); // Fetch ulang data dan gambar baru
-                        document.getElementById("jawab").value = ""; // Reset input jawaban
-                    } else {
-                        alert("Jawaban salah, coba lagi!");
-                    }
-                });
-        </script>
-    </body>
+      document.getElementById("btn-jawab").addEventListener("click", () => {
+        const jawabanUser = document
+          .getElementById("jawab")
+          .value.trim()
+          .toLowerCase();
+
+        if (!jawabanUser) {
+          alert("Isi dulu lah");
+          return;
+        }
+
+        if (jawabanUser === jawabanYangBenar.toLowerCase()) {
+          alert("Jawaban benar!");
+          fetchData();
+          document.getElementById("jawab").value = "";
+        } else {
+          alert("Jawaban salah, coba lagi!");
+        }
+      });
+    </script>
+  </body>
 </html>
