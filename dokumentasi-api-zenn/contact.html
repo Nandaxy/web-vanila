@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1>API Zenn</h1>
+      <div class="hamburger">
+        <span onclick="openNavbar()"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="30"
+            height="30"
+            viewBox="0 0 50 50"
+          >
+            <path
+              d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
+            ></path></svg
+        ></span>
+      </div>
+      <div class="desk-link">
+        <a href="index.html">Home</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
+        <div class="view">
+          <p>View :</p>
+          <span id="view2">-</span>
+        </div>
+      </div>
+    </div>
+    <div id="myLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html">Kontak</a>
+      <div class="view">
+        <p>View :</p>
+        <span id="view">-</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="about-section">
+        <h2>Kontak API Zenn</h2>
+        <p>Hubungi email :</p>
+        <a>lofikokopi@gmail.com</a>
+      </div>
+    </div>
+
+    <script>
+      function openNavbar() {
+        const x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+      async function counter() {
+        const r = await fetch(
+          "https://api-zenn.vercel.app/api/tool/counter/view?q=docOfApiZenn&secret=1999"
+        );
+        const c = await r.json();
+        document.getElementById("view").innerHTML = c.data.count;
+        document.getElementById("view2").innerHTML = c.data.count;
+      }
+
+      counter();
+
+      counter();
+    </script>
+  </body>
+</html>

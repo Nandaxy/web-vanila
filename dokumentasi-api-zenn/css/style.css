@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 6px 20px;
+  box-shadow: 0px 0px 1px 2px #00000023;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+#myLinks {
+  display: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+#myLinks a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#myLinks a:hover {
+  background-color: #f1f1f1;
+}
+
+.view {
+  display: flex;
+  padding: 10px;
+}
+
+.view span {
+  margin-left: 4px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.desk-link {
+  display: flex;
+  align-items: center;
+}
+
+.desk-link a {
+  color: #161616;
+  text-decoration: none;
+  margin: 0px 8px;
+}
+
+.desk-link a:hover {
+  text-decoration: underline;
+  opacity: 60%;
+}
+
+#swagger-ui {
+  padding-bottom: 30px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.about-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+}
+
+.about-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 768px) {
+  .desk-link {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .about-section {
+    width: 95%;
+  }
+}

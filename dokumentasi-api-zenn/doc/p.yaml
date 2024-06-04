@@ -1,0 +1,548 @@
+openapi: 3.0.0
+info:
+  title: Dokumentasi API Zenn
+  description: Ini adalah contoh dokumentasi API
+  version: 1.0.0
+servers:
+  - url: https://api-zenn.vercel.app
+paths:
+  /system/runtime:
+    get:
+      summary: Dapatkan informasi runtime sistem
+      tags:
+        - Informasi Sistem
+      responses:
+        "200":
+          description: Informasi runtime sistem
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  runtime:
+                    type: string
+
+  /system/statistic:
+    get:
+      summary: Dapatkan statistik sistem
+      tags:
+        - Informasi Sistem
+      responses:
+        "200":
+          description: Informasi statistik sistem
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+
+  /api/ai/groq:
+    get:
+      summary: Ajukan pertanyaan kepada AI dengan pertanyaan tertentu
+      tags:
+        - AI
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: String pertanyaan untuk diajukan kepada AI
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Respon dari AI terhadap pertanyaan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: string
+
+  /api/downloader/play:
+    get:
+      summary: Memutar video dari YouTube
+      tags:
+        - Downloader
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Judul video yang ingin diputar
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Informasi video yang diputar
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/downloader/tiktok:
+    get:
+      summary: Mendownload video dari TikTok
+      tags:
+        - Downloader
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: URL video TikTok yang ingin didownload
+          schema:
+            type: string
+      responses:
+        "200":
+          description: URL untuk mendownload video TikTok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/downloader/yt:
+    get:
+      summary: Mendownload video dan audio dari YouTube
+      tags:
+        - Downloader
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: URL video  YouTube yang ingin didownload
+          schema:
+            type: string
+      responses:
+        "200":
+          description: URL untuk mendownload video dan audio YouTube
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/downloader/ytmp3:
+    get:
+      summary: Mengunduh audio dari YouTube
+      tags:
+        - Downloader
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: URL video YouTube yang ingin diubah menjadi audio
+          schema:
+            type: string
+      responses:
+        "200":
+          description: URL untuk mengunduh audio dari YouTube
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/downloader/ytmp4:
+    get:
+      summary: Mendownload video dari YouTube
+      tags:
+        - Downloader
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: URL video YouTube yang ingin didownload
+          schema:
+            type: string
+      responses:
+        "200":
+          description: URL untuk mendownload video YouTube
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/downloader/ytsearch:
+    get:
+      summary: Mencari video di YouTube
+      tags:
+        - Downloader
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Pencarian video di YouTube
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Daftar hasil pencarian video di YouTube
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/info/tanggal:
+    get:
+      summary: Mendapatkan informasi tanggal dan hari libur
+      tags:
+        - Information
+      responses:
+        "200":
+          description: Data tanggal saat ini dan tahun ini
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  sekarang:
+                    type: string
+                  tahun:
+                    type: integer
+                  data:
+                    type: object
+
+  /api/info/tanggal/{tahun}:
+    get:
+      summary: Mendapatkan informasi tanggal untuk tahun tertentu
+      tags:
+        - Information
+      parameters:
+        - name: tahun
+          in: path
+          required: true
+          description: Tahun yang ingin diperoleh informasinya
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Data tanggal untuk tahun yang diminta
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  sekarang:
+                    type: string
+                  tahun:
+                    type: string
+                  data:
+                    type: object
+
+  /api/islami/random-quote:
+    get:
+      summary: Mendapatkan quote Islami acak
+      tags:
+        - Islami
+      responses:
+        "200":
+          description: Data kutipan Islami acak
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: string
+
+  /api/islami/quran/surah:
+    get:
+      summary: Mendapatkan semua daftar surah Al-Quran
+      tags:
+        - Islami
+      responses:
+        "200":
+          description: Daftar surah Al-Quran
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+
+  /api/islami/quran/surah/{id}:
+    get:
+      summary: Mendapatkan detail surah Al-Quran berdasarkan nomor surah
+      tags:
+        - Islami
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Nomor surah Al-Quran
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Detail surah Al-Quran
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                  
+  /api/islami/sholat/kota:
+    get:
+      summary: Mengambil daftar kota untuk jadwal sholat
+      tags:
+        - Islami
+      responses:
+        "200":
+          description: Berhasil mengambil daftar kota
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+
+  /api/islami/sholat/kota/cari/{cari}:
+    get:
+    summary: Mencari kota berdasarkan nama
+    tags:
+      - Islami
+    parameters:
+      - name: cari
+        in: path
+        required: true
+        description: Nama kota yang dicari
+    responses:
+      "200":
+        description: Berhasil menemukan kota
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: boolean
+                data:
+                  type: object
+
+  /api/islami/sholat/kota/{id}:
+    get:
+      summary: Mengambil detail kota berdasarkan ID
+      tags:
+        - Islami
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID kota
+      responses:
+        "200":
+          description: Berhasil mengambil detail kota
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                 
+
+  /api/islami/sholat/jadwal/{id}/{tahun}/{bulan}:
+    get:
+      summary: Mengambil jadwal sholat bulanan untuk kota tertentu
+      tags:
+        - Islami
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID kota
+        - name: tahun
+          in: path
+          required: true
+          description: Tahun
+        - name: bulan
+          in: path
+          required: true
+          description: Bulan
+      responses:
+        "200":
+          description: Berhasil mengambil jadwal sholat bulanan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                
+
+  /api/islami/sholat/jadwal/{id}/{tahun}/{bulan}/{tanggal}:
+    get:
+      summary: Mengambil jadwal sholat harian untuk kota tertentu
+      tags:
+        - Islami
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID kota
+        - name: tahun
+          in: path
+          required: true
+          description: Tahun
+        - name: bulan
+          in: path
+          required: true
+          description: Bulan
+        - name: tanggal
+          in: path
+          required: true
+          description: Tanggal
+      responses:
+        "200":
+          description: Berhasil mengambil jadwal sholat harian
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                
+
+  /api/news/gempa:
+    get:
+      summary: Mendapatkan informasi terbaru tentang gempa
+      tags:
+        - News
+      responses:
+        "200":
+          description: Detail gempa terbaru
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+
+  /api/tool/counter:
+    get:
+      summary: Membuat data count berdasarkan query
+      tags:
+        - Tool
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Query untuk membuat database count
+          schema:
+            type: string
+        - name: secret
+          in: query
+          required: false
+          description: Kunci rahasia opsional
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Berhasil membuat database count berdasarkan query
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                  data:
+                    type: object
+
+  /api/tool/counter/view:
+    get:
+      summary: Mendapatkan informasi terbaru tentang gempa
+      tags:
+        - Tool
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Query database
+          schema:
+            type: string
+        - name: secret
+          in: query
+          required: false
+          description: Kunci rahasia opsional
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Detail gempa terbaru
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
