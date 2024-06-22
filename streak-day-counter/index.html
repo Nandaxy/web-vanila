@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Streak Day Counter</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="counter-container">
+            <input
+                type="text"
+                class="title-input"
+                id="title-input"
+                placeholder="Enter your title here"
+            />
+            <div class="progress-circle">
+                <svg width="200" height="200">
+                    <circle
+                        class="progress-bg"
+                        cx="100"
+                        cy="100"
+                        r="90"
+                    ></circle>
+                    <circle
+                        class="progress-bar"
+                        cx="100"
+                        cy="100"
+                        r="90"
+                        stroke-dasharray="0 565.48"
+                    ></circle>
+                </svg>
+                <div class="progress-text" id="progress-text">0 Days</div>
+            </div>
+            <div class="time-counter" id="time-counter">00:00:00</div>
+            <button onclick="confirmReset()">Reset Counter</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

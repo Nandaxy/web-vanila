@@ -1,0 +1,82 @@
+      
+            body {
+                font-family: "Roboto", sans-serif;
+
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .counter-container {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+            .title-input {
+                width: 80%;
+                padding: 10px;
+                font-size: 1.5em;
+                border: none;
+                border-radius: 5px;
+                text-align: center;
+                margin-bottom: 20px;
+                background-color: transparent;
+                color: white;
+                font-weight: bold;
+            }
+            .title-input:focus {
+                outline: none;
+            }
+            .progress-circle {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                margin: 0 auto 20px;
+            }
+            .progress-circle svg {
+                transform: rotate(-90deg);
+            }
+            .progress-circle circle {
+                fill: none;
+                stroke-width: 10;
+            }
+            .progress-bg {
+                stroke: rgba(255, 255, 255, 0.2);
+            }
+            .progress-bar {
+                stroke: #ffdd57;
+                stroke-linecap: round;
+                transition: stroke-dasharray 0.3s;
+            }
+            .progress-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2em;
+            }
+            .time-counter {
+                font-size: 1.5em;
+                color: #ffdd57;
+            }
+            button {
+                padding: 10px 25px;
+                font-size: 1em;
+                font-weight: bold;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                background: #ffdd57;
+                color: #333;
+                transition: background 0.3s;
+                margin-top: 10px;
+            }
+            button:hover {
+                background: #f1c40f;
+            }
+      
